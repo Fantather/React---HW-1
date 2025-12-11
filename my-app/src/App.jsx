@@ -11,16 +11,24 @@ function App() {
 }
 
 function BuildBody() {
-    return (
-      <div>
-        <InfoCity />
-        <hr />
-        <GetBook />
-        <hr />
-        <GetRecipeHtml />
-        <hr />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <InfoCity />
+      <hr />
+      <GetBook />
+      <hr />
+      <GetRecipeHtml />
+      <hr />
+      <Task4El name = "Anna"/>
+    </div>
+  )
+}
+
+function Task4El(props)
+{
+  return(
+    <div>Hello: {props.name}</div>
+  );
+}
 
 export default App
