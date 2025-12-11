@@ -1,12 +1,20 @@
+.book-card{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.book-card__cover{
+    width: 300px;
+    height: auto;
+}
+
+
 .comment{
     padding: 15px;
 }
 
 .comments-container{
     margin-top: 15px;
-}
-
-.cover{
-    width: 300px;
-    height: auto;
+    margin-left: 20px;
 }

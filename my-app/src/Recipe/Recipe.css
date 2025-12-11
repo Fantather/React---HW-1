@@ -1,0 +1,26 @@
+.task-wrap__recipe-name{
+    text-align: center;
+}
+
+.recipe-info__recipe-img{
+    object-fit: contain;
+    width: 400px;
+    height: auto;
+}
+
+.recipe-info__head-wrap{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.recipe-info__steps{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.step-card{
+    width: 500px;
+}

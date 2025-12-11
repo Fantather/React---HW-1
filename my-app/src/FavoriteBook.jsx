@@ -54,17 +54,21 @@ export function GetBook()
 function GetBookHtml(book)
 {
     return(
-            <div className="book-card">
-                <img className='cover' src="https://loveread.com.ua/pic/1/4/7/3/1/3//147313-cover.jpg" alt="Book cover" />
-                <div>Title: {book.title}</div>
-                <div>Full Name Author: {book.fullNameAuthor}</div>
-                <div>Genre: {book.genre}</div>
-                <div>Number of pages: {book.pageCount}</div>
+            <div className='books-wrap'>
+                <div className="book-card">
+                    <img className='book-card__cover' src={book.imgSrc} alt="Book cover" />
+                    <div className='book-card__info'>
+                        <div>Title: {book.title}</div>
+                        <div>Full Name Author: {book.fullNameAuthor}</div>
+                        <div>Genre: {book.genre}</div>
+                        <div>Number of pages: {book.pageCount}</div>
+                    </div>
+                </div>
                 <div className="comments-container">
                     <div>Комментарии:</div>
                     {
-                        Array.from(book.comments).map((comment) => {
-                            return GetCommentHtml(comment[0], comment[1])
+                        Array.from(book.comments).map((comment, index) => {
+                            return GetCommentHtml(comment[0], comment[1], index);
                         })
                     }
                 </div>
@@ -72,19 +76,19 @@ function GetBookHtml(book)
         )
 }
 
-function GetCommentHtml(name, commentText)
+function GetCommentHtml(name, commentText, index)
 {
     return(
-        <div className="comment">
+        <div className="comment" key={index}>
             <b>{name}</b>
             <p>{commentText}</p>
         </div>
-    )
+    );
 }
 
 function GetBookObject()
 {
-    const book = new Book('Мать учения', 'Думагой Курмаич', 'Fantasy', 940);
+    const book = new Book('Мать учения', 'Думагой Курмаич', 'Fantasy', 940, 'https://loveread.com.ua/pic/1/4/7/3/1/3//147313-cover.jpg');
     book.AddComment('Алексей', 'Очень продуманная книга, мне понравилось');
     book.AddComment('Алёна', 'Слишком затянуто');
     book.AddComment('Tomas', 'Don\'t listen to Alena');

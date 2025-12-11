@@ -1,5 +1,7 @@
 import { InfoCity } from './AboutCity.jsx'
 import { GetBook } from './FavoriteBook.jsx'
+import { GetRecipeHtml } from './Recipe/Recipe.jsx'
+
 
 
 function App() {
@@ -14,6 +16,8 @@ function BuildBody() {
         <InfoCity />
         <hr />
         <GetBook />
+        <hr />
+        <GetRecipeHtml />
         <hr />
       </div>
     )
